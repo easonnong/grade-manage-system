@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 
+	"github.com/easonnong/grade-manage-system/common"
+	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/spf13/viper"
 )
@@ -10,6 +12,14 @@ import (
 func main() {
 	//读取配置信息
 	InitConfig()
+	//连接mysql
+	common.InitDB()
+	//获取数据库
+	db := common.GetDB()
+	defer db.Close()
+	//获取路由
+	router := gin.Default()
+	router = CollectRoutes(router)
 }
 
 //从配置文件中读取

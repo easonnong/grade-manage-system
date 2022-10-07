@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/url"
 
-	"github.com/easonnong/gin-vue-essential/model"
+	"github.com/easonnong/grade-manage-system/model"
 	"github.com/jinzhu/gorm"
 	"github.com/spf13/viper"
 )
@@ -39,8 +39,7 @@ func InitDB() {
 	}
 
 	//创建数据表 自动迁移
-	DB.AutoMigrate(&model.User{})
-
+	DB.AutoMigrate(&model.Students{}, &model.Teachers{}, &model.Courses{}, &model.Class{}, &model.Grade{})
 }
 
 //获取DB
