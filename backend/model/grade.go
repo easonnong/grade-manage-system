@@ -6,7 +6,7 @@ package model
 type Grade struct {
 	Courses   Courses `gorm:"ForeignKey:CourseID;AssociationForeignKey:ID;primaryKey"`
 	CourseID  uint
-	Students  Students `gorm:"ForeignKey:StudentID;AssociationForeignKey:ID;primaryKey"`
+	Students  Students `gorm:"ForeignKey:StudentID;AssociationForeignKey:ID"`
 	StudentID uint
 	Score     uint
 }

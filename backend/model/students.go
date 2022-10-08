@@ -9,8 +9,9 @@ import (
 //////////////////////////////////////
 type Students struct {
 	gorm.Model
-	Password string `gorm:"size:255;not null"`
-	Name     string `gorm:"type:varchar(5);not null"`
-	Sex      string `gorm:"type:varchar(1);not null"`
-	Credit   uint
+	StudentId uint
+	Password  string `gorm:"size:255;not null"`
+	Name      string `gorm:"type:varchar(5);not null"`
+	Sex       string `gorm:"type:varchar(1);not null"`
+	Credit    uint
 }
