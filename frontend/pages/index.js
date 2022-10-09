@@ -1,5 +1,8 @@
 import Head from "next/head";
-import Login from "../component/Login";
+import Admin from "../components/Admin";
+import Login from "../components/Login";
+import Student from "../components/Student";
+import Teacher from "../components/Teacher";
 
 export default function Home() {
   return (
@@ -11,7 +14,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <Login />
+        <Admin />
       </main>
     </div>
   );
