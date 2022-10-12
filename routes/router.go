@@ -19,7 +19,7 @@ func InitRouter() {
 	gin.SetMode(utils.AppMode)
 	r := gin.New()
 	// 设置信任网络 []string
-	// nil 为不计算，避免性能消耗，上线应当设置
+	// nil 为不计算，避免性能消耗
 	_ = r.SetTrustedProxies(nil)
 
 	r.HTMLRender = createMyRender()
