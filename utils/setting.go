@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+
 	"gopkg.in/ini.v1"
 )
 
@@ -42,9 +43,9 @@ func LoadServer(file *ini.File) {
 func LoadData(file *ini.File) {
 	DbHost = file.Section("database").Key("DbHost").MustString("localhost")
 	DbPort = file.Section("database").Key("DbPort").MustString("3306")
-	DbUser = file.Section("database").Key("DbUser").MustString("ginblog")
+	DbUser = file.Section("database").Key("DbUser").MustString("blog")
 	DbPassWord = file.Section("database").Key("DbPassWord").String()
-	DbName = file.Section("database").Key("DbName").MustString("ginblog")
+	DbName = file.Section("database").Key("DbName").MustString("blog")
 }
 
 func LoadQiniu(file *ini.File) {
